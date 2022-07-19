@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %} Домашняя страница {% endblock %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <ul class="card-wrapper">
+        <li class="card">
+
+            <img class="img-card" src="{% static 'cards/wi2.png' %}" alt=''>
+            <h5 align="center">Подземные воды</h5>
+            <ul style = "padding-left: 10%;">
+                <li><a href="/wells/wells_inspection"> Инспекция наблюдательных скважин </a></li>
+                <li><a href="/wells/gw_regime"> Режимные наблюдения в скважинах </a>
+                </li>
+                <li><a href="/wells/wells_pumping"> Опытно-фильтрационные работы </a>
+                </li>
+                <li><a href="/springs/springs_inspection"> Обследование родников </a>
+                </li>
+                <li><a href="/drawwells/drawwells_inspection"> Обследование
+                    колодцев </a></li>
+                <li><a href="/intakes/intakes_survey"> Обследование водозаборов </a>
+                </li>
+            </ul>
+        </li>
+        <li class="card">
+
+            <img class="img-card" src="{% static 'cards/egp2.png' %}" alt=''>
+            <h5 align="center">Опасные геологические процессы</h5>
+            <ul style = "padding-left: 10%;">
+                <li><a href="/egp_points_survey">Маршрутные наблюдения</a></li>
+                <li><a href="/egp_sites_survey">Формирование актов обследования</a></li>
+                <li><a href="/egp_observes_inspection">Формирование актов инспекции пукнтов наблюдательной сети</a></li>
+                <li><a href="#">Формирование журналов визуального мониторинга участка ЭГП</a></li>
+            </ul>
+        </li>
+        <li class="card">
+
+            <img class="img-card" src="{% static 'cards/geodesic2.png' %}" alt=''>
+            <h5 align="center">Обследование территорий</h5>
+            <ul style = "padding-left: 10%;">
+                <li><a href="/recon_points_survey">Маршрутные наблюдения</a></li>
+                <li><a href="/recon_sites_survey">Формирование актов обследования</a></li>
+            </ul>
+        </li>
+        <li class="card">
+
+            <img class="img-card" src="{% static 'cards/fund2.png' %}" alt=''>
+            <h5 align="center">Фонд геологической информации</h5>
+            <ul style = "padding-left: 10%;">
+                <li><a href="/registration">Регистрация документов</a></li>
+                <li><a href="/license">Лицензии</a></li>
+                <li><a href="/license_reports">Отчетность недропользователей</a></li>
+                <li><a href="/wells/wells_documentation">Документация по скважинам</a>
+            </ul>
+        </li>
+        <li class="card">
+
+            <img class="img-card" src="{% static 'cards/analytics2.png' %}" alt=''>
+            <h5 align="center">Аналитика</h5>
+            <ul style = "padding-left: 10%;">
+                <li>
+                    <a href="#"> Госплан </a>
+
+                </li>
+
+            </ul>
+
+        </li>
+    </ul>
+</div>
+{% endblock %}
