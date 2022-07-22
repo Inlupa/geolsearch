@@ -15,15 +15,16 @@
 </head>
 <body>
 
-<div class="navbar flex flex-horizontal-center">
+<div class="navbar flex">
     <ul class="flex-container flex flex-horizontal-center">
-        <li class="navitem flex flex-center"><a href="#"> Технологии устранения дефектов дорожного покрытия, ямочный
-            ремонт,
-            санация трещин </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Технологии содержания, декорации и благоустройства дорожных
-            покрытий </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Технологии строительства дорожных покрытий </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Нормативная и техническая документация </a></li>
+        <li class="navitem flex flex-center"><a href="#"> Оборудование </a></li>
+        <li class="navitem flex flex-center"><a href="#"> Материалы </a></li>
+        <li class="navitem flex flex-center"><a href="#"> Инструменты </a></li>
+        <li class="navitem flex flex-center"><a href="#"> Обслуживание </a>
+        <li class="navitem flex flex-center"><a href="#"> Документация </a></li>
+        <li class="navitem flex flex-center"><a href="#"> Вакансии </a></li>
+        <li class="navitem flex flex-center"><a href="#"> Как добраться </a></li>
+        <li class="navitem flex flex-center"><a href="#"> Контакты </a></li>
     </ul>
 </div>
 
@@ -32,34 +33,47 @@
         <div class="image-slider__wrapper swiper-wrapper">
             <div class="image-slider__slide swiper-slide">
                 <div class="image-slider__image">
-                    <!-- ТУТ КАРТИНКУ-->
-                    <img src="{% static 'img/anime1.png' %}" alt="Картинка" width="" height="">
+                    <!-- Первая каротинка свайпера-->
+                    <picture class="picture_container">
+                        <source srcset="{% static 'img/anime1.png' %}" media="(min-width:1200px)"/>
+                       <a href="/repair"> <img src="{% static 'img/anime1_small.png' %}" alt="Картинка"/> </a>
+                    </picture>
+
                 </div>
             </div>
 
             <div class="image-slider__slide swiper-slide">
                 <div class="image-slider__image ">
-                    <!-- ТУТ КАРТИНКУ-->
-                    <img src="{% static 'img/anime2.jpg' %}" alt="Картинка">
+                    <!-- Вторая картинка свайпера-->
+                    <picture>
+                        <source srcset="{% static 'img/anime2.jpg' %}" media="(min-width:1200px)"/>
+                        <img src="{% static 'img/anime2_small.jpg' %}" alt="Картинка"/>
+                        <a class="text-on-site" href="/looks"> Внешний вид </a>
+                    </picture>
                 </div>
             </div>
 
             <div class="image-slider__slide swiper-slide">
                 <div class="image-slider__image">
-                    <!-- ТУТ КАРТИНКУ-->
-                    <img src="{% static 'img/anime3.jpg' %}" alt="Картинка" >
+                    <!-- Третья картинка свайпера-->
+                    <picture>
+                        <source srcset="{% static 'img/anime3.jpg' %}" media="(min-width:1200px)"/>
+                        <img src="{% static 'img/anime3_small.jpg' %}" alt="Картинка"/>
+                        <a class="text-on-site" href="/tech"> Технологии строительства дорог</a>
+                    </picture>
                 </div>
             </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
 
         <!-- <div class="swiper-pagination"></div> -->
 
-        <div class="swiper-scrollbar"></div>
+
     </div>
 </div>
+
 <script src="{% static 'js/main.js' %}"></script>
+
+<div> {% block content %}{% endblock %}</div>
 </body>
 </html>
 

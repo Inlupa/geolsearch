@@ -1,48 +1,46 @@
+/* Настойки тега хтмл */
+html {
+        background-color: #c5e4fadc;
+        overflow-x:  hidden;
+}
+/* РНастройки списка */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
+/* Настройка контейнера навбара */
 .flex-container{
+    border-radius:5px;
     list-style: none;
       margin: 0;
-      background: #90cf86dc;
+      background: #041624dc;
 }
-
+/* Настройка ссылок-кнопок внутри навбара*/
 .flex-container a {
   border-radius: 5px;
   text-decoration: none;
   padding: 1em;
-  color: #241704dc;
+  color: #77add4dc;
   font: 14px/1 sans-serif;
-}
-.block__body{
-    padding:0px 0px 0px 30px;
-    flex:1 1 auto
-    min-width:0;
 }
 
 /* Change the link color on hover */
 .flex-container a:hover {
-  background: #44ad42dc;
+  background: #368ac7dc;
   color: white;
 }
 
-.title{
-    font-size:30px;
-    font-weight:700;
-    color:black;
-    margin:0px 0px 30px 0px;
+.wrapper{
+    padding:5px;
+    min-height:100%;
 }
+
 .image_slider{
 padding: 30px 0 70px 0;
 }
 
-.wrapper{
-    padding:30px;
-    min-height:100%;
-}
 .image-slider__wrapper{
 }
 
@@ -54,7 +52,6 @@ padding: 30px 0 70px 0;
 }
 
 .image-slider__image img {
-
     max-width:100%;
 }
 
@@ -68,6 +65,25 @@ padding: 30px 0 70px 0;
     font-size:14px;
     background-color:#fff;
 }
-html {
-       overflow:  hidden;
+
+
+/* Описание кнопки ссылки внутри свайпера */
+.swiper-container a {
+    text-decoration: none;
+    padding:5px;
+    border-radius:5px;
+    color: #241704dc;
+    font: 15px/1 sans-serif;
+}
+
+/* Реакция кнопки внутри свайпера */
+
+
+/* Тип текста на сайте под навбарами */
+.text-on-site {
+    padding: 20px;
+    font: 30px/1 sans-serif;
+    text-decoration: none;
+    line-height: 50px;
+    text-align:justify;
 }
