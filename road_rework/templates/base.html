@@ -17,6 +17,7 @@
 
 <div class="navbar flex">
     <ul class="flex-container flex flex-horizontal-center">
+        <li class="navitem flex flex-center"><a href="/"> <img src="{% static 'img/icon_road.jpg' %}" width="80" height="40" alt="Картинка"/> </a></li>
         <li class="navitem flex flex-center"><a href="#"> Оборудование </a></li>
         <li class="navitem flex flex-center"><a href="#"> Материалы </a></li>
         <li class="navitem flex flex-center"><a href="#"> Инструменты </a></li>
@@ -25,6 +26,7 @@
         <li class="navitem flex flex-center"><a href="#"> Вакансии </a></li>
         <li class="navitem flex flex-center"><a href="#"> Как добраться </a></li>
         <li class="navitem flex flex-center"><a href="#"> Контакты </a></li>
+        <li class="navitem flex flex-center"><a href="/login"> Вход </a></li>
     </ul>
 </div>
 
@@ -34,21 +36,22 @@
             <div class="image-slider__slide swiper-slide">
                 <div class="image-slider__image">
                     <!-- Первая каротинка свайпера-->
-                    <picture class="picture_container">
+                    <picture>
                         <source srcset="{% static 'img/anime1.png' %}" media="(min-width:1200px)"/>
-                       <a href="/repair"> <img src="{% static 'img/anime1_small.png' %}" alt="Картинка"/> </a>
+                        <img src="{% static 'img/anime1_small.png' %}" alt="Картинка"/>
+                        <a class="text-on-pic" href="/repair"> Ремонт </a>
                     </picture>
 
                 </div>
             </div>
 
             <div class="image-slider__slide swiper-slide">
-                <div class="image-slider__image ">
+                <div class="image-slider__image">
                     <!-- Вторая картинка свайпера-->
                     <picture>
                         <source srcset="{% static 'img/anime2.jpg' %}" media="(min-width:1200px)"/>
                         <img src="{% static 'img/anime2_small.jpg' %}" alt="Картинка"/>
-                        <a class="text-on-site" href="/looks"> Внешний вид </a>
+                        <a class="text-on-pic" href="/looks"> Внешний вид </a>
                     </picture>
                 </div>
             </div>
@@ -59,7 +62,7 @@
                     <picture>
                         <source srcset="{% static 'img/anime3.jpg' %}" media="(min-width:1200px)"/>
                         <img src="{% static 'img/anime3_small.jpg' %}" alt="Картинка"/>
-                        <a class="text-on-site" href="/tech"> Технологии строительства дорог</a>
+                        <a class="text-on-pic" href="/tech"> Технологии строительства дорог</a>
                     </picture>
                 </div>
             </div>

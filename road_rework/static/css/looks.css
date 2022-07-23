@@ -38,7 +38,7 @@ ul {
 }
 
 .image_slider{
-padding: 30px 0 70px 0;
+padding: 10px 0 70px 0;
 }
 
 .image-slider__wrapper{
@@ -48,42 +48,94 @@ padding: 30px 0 70px 0;
 }
 
 .image-slider__image{
+
+    position: relative;
     text-align:center:
 }
 
 .image-slider__image img {
     max-width:100%;
 }
-
-.image_slider .swiper-pagination{
-    bottom:0;
+/* Текст на картинке*/
+.text-on-pic {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.image_slider .swiper-pagination-bullet {
-    width:20px;
-    height:20px;
-    line-height: 20px;
-    font-size:14px;
-    background-color:#fff;
-}
-
 
 /* Описание кнопки ссылки внутри свайпера */
-.swiper-container a {
+
+picture a {
     text-decoration: none;
-    padding:5px;
-    border-radius:5px;
-    color: #241704dc;
-    font: 15px/1 sans-serif;
+    border-radius:50px;
+    padding:20px 100px;
+    background-color:#77add4dc;
+    color: #041624dc;
+    font: 50px/1 sans-serif;
 }
 
-/* Реакция кнопки внутри свайпера */
+@media all and (max-width: 1200px) {
+  picture a {
+    text-decoration: none;
+    border-radius:30px;
+    padding:20px;
+    background-color:#77add4dc;
+    color: #041624dc;
+    font: 30px/1 sans-serif;
+  }
+ }
+ @media all and (max-width: 600px) {
+  picture a {
+    text-decoration: none;
+    border-radius:25px;
+    padding:15px;
+    background-color:#77add4dc;
+    color: #041624dc;
+    font: 25px/1 sans-serif;
+  }
+ }
 
-
+picture a:hover {
+  background: #368ac7dc;
+  color: white;
+}
 /* Тип текста на сайте под навбарами */
 .text-on-site {
     padding: 20px;
-    font: 30px/1 sans-serif;
+    font: 50px/1 sans-serif;
     text-decoration: none;
     line-height: 50px;
     text-align:justify;
 }
+
+label {
+    font: 15px/1 sans-serif;
+    text-decoration: none;
+    color: #041624dc;
+    padding:5px;
+
+}
+input {
+  width: 80%;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login_input_button{
+    position: relative;
+    top: 35px;
+    width: 80px;
+    height:45px;
+
+}
+
