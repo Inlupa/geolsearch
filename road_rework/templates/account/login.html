@@ -2,9 +2,13 @@
 {% block title %} Авторизация {% endblock %}
 {% block content %}
     <div class="text-on-site flex flex-horizontal-center" > Введите логин и пароль для входа </div>
+
     <form action="." class="flex flex-horizontal-center" method="post">
-        {{ form.as_p }}
         {% csrf_token %}
+        {{ form.as_p }}
         <button class="login_input_button" type="submit"> Вход </button>
     </form>
+        <div class="button_type " >
+                     <a  class="flex-center" href="/register" > Регистрация </a>
+        </div>
 {% endblock %}
