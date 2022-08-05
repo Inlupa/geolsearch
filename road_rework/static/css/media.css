@@ -1,0 +1,33 @@
+@media all and (max-width: 1200px) {
+  .button_type a {
+    text-decoration: none;
+    border-radius:30px;
+    padding:20px;
+    font: 30px/1 sans-serif;
+
+    .input_form_content {
+    border-radius: 10px;
+    max-width:97%;
+}
+  }
+
+  .container_form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ }
+ @media all and (max-width: 600px) {
+  .button_type a {
+    text-decoration: none;
+    border-radius:25px;
+    padding:15px;
+    font: 25px/1 sans-serif;
+  }
+  .container_form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .input_form_content {
+  border-radius: 10px;
+  max-width:98%;
+}
+ }

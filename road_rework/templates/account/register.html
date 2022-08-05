@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Create an account {% endblock %}
+
+{% block content %}
+<div style=" width: 100%;
+    height: 100%;">
+    <h1> Создание аккаунта </h1>
+    <p> Пожалуйста зарегистрируйте аккаунт :</p>
+</div>
+    <form class="flex" style="align-items: center;" action="." method="post">
+        {{ user_form.as_table}}
+        {% csrf_token %}
+        <p><input type="submit" value="Create my account"></p>
+    </form>
+{% endblock %}

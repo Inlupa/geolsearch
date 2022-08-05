@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Регистрация документов {% endblock %}
+{% block content %}
+
+<form method="get" style="padding:20px">
+    {{ filter.form}}
+    <button type="submit"> Поиск</button>
+</form>
+<table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID статьи</th>
+            <th>Название статьи</th>
+            <th>Дата создания</th>
+            <th> Автор </th>
+
+        </tr>
+        </thead>
+        <tbody>
+         {% for article in filter.qs %}
+        <tr>
+            <td>
+              {{ article.article_id }}
+            </td>
+            <td>
+              {{ article.article_name }}
+            </td>
+            <td>
+              {{ article.date }}
+            </td>
+            <td>
+              {{ article.creator }}
+            </td>
+            <td>
+                <a href ="{% url 'article' article.article_id  %}" > Перейти </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}
