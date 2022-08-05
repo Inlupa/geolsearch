@@ -1,28 +1,36 @@
 /* Настойки тега хтмл */
 body{
-
+    margin:0;
 }
 html {
         background: #d1cec9dc;
         overflow-x:  hidden;
         width:100vw;
 }
+/* Ширина скроллбара */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
+     transition: 0.15s;
+
 }
+
+/* Вид скроллбара*/
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #fbc02d;
 }
+/* Задний фон скролбара*/
 ::-webkit-scrollbar-track{
     background: #000000dc;
 }
+
 /* РНастройки списка */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
 .navbar {
     background: #000000dc;
 }
@@ -41,7 +49,7 @@ ul {
   text-decoration: none;
   padding:  20px;
   color: #ccb0a1dc;
-  font: 14px sans-serif;
+  font: 17px sans-serif;
   transition: 0.15s;
 }
 
@@ -96,22 +104,6 @@ ul {
 
 }
 
-@media all and (max-width: 1200px) {
-  .button_type a {
-    text-decoration: none;
-    border-radius:30px;
-    padding:20px;
-    font: 30px/1 sans-serif;
-  }
- }
- @media all and (max-width: 600px) {
-  .button_type a {
-    text-decoration: none;
-    border-radius:25px;
-    padding:15px;
-    font: 25px/1 sans-serif;
-  }
- }
 
 .button_type a:hover {
   background: #fbc02d;
@@ -136,18 +128,12 @@ label {
 
 }
 input {
-  width: 80%;
+  width: 100%;
   padding: 10px;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #bdbdbd;
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
 }
 
 .login_input_button{
@@ -157,8 +143,52 @@ input {
     height:45px;
 
 }
-form {
-    text-align:justify;
+
+
+.input_form {
+  border-radius: 10px;
+  max-width:95%;
+
 }
 
+.input_form_content {
+  border-radius: 5px;
 
+  width:98%;
+  height:150px;
+  font: 15px/1 sans-serif;
+  text-decoration: none;
+
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 5px solid #fff;
+	border-top: 5px solid #fff;
+	border-bottom: 3px solid #fff;
+	border-collapse: collapse;
+	outline: 3px solid #ffd300;
+	font-size: 15px;
+	background: #fff!important;
+}
+.table th {
+	font-weight: bold;
+	padding: 7px;
+	background: #ffd300;
+	border: none;
+	text-align: left;
+	font-size: 15px;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #ffd300;
+}
+.table td {
+	padding: 7px;
+	border: none;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+	font-size: 15px;
+}
+.table tbody tr:nth-child(even){
+	background: #f8f8f8!important;
+}

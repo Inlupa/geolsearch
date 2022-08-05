@@ -10,6 +10,7 @@
     <link rel='stylesheet' href="{% static 'css/looks.css' %}">
     <link rel='stylesheet' href="{% static 'css/flex.css' %}">
     <link rel='stylesheet' href="{% static 'css/classes.css' %}">
+    <link rel='stylesheet' href="{% static 'css/media.css' %}">
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
@@ -26,13 +27,15 @@
         <li class="navitem flex flex-center"><a href="#"> Вакансии </a></li>
         <li class="navitem flex flex-center"><a href="#"> Как добраться </a></li>
         <li class="navitem flex flex-center"><a href="#"> Контакты </a></li>
+        <li class="navitem flex flex-center"><a href="/search_article"> Статьи </a></li>
+
         {% if request.user.is_authenticated %}
             <li class="navitem flex flex-center"><a href="{% url 'logout' %}"> Выйти </a></li>
         {% else %}
             <li class="navitem flex flex-center"><a href="{% url 'login' %}"> Войти </a></li>
         {% endif %}
         {% if request.user.is_authenticated %}
-            <li class="navitem flex flex-center"><a href="#"> Создать новость </a></li>
+            <li class="navitem flex flex-center"><a href="/article"> Создать статью </a></li>
         {% endif %}
     </ul>
 </nav>
