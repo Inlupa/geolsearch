@@ -7,6 +7,7 @@ class Article(models.Model):
     date = models.DateField(blank=True, null=True)
     creator = models.IntegerField()
     article_id = models.AutoField(primary_key=True)
+    picture_url = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False

@@ -3,6 +3,7 @@
 {% block content %}
     <div class="text-on-site flex flex-horizontal-center" > Введите логин и пароль для входа </div>
 
+
     <form action="." method="post">
 
         <div class="container_form">
@@ -22,5 +23,11 @@
         </div>
         {% csrf_token %}
     </form>
-
+{% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }} </li>
+            {% endfor %}
+        </ul>
+{% endif %}
 {% endblock %}

@@ -17,17 +17,18 @@
      <input class="submit_button" type="submit" value="Поиск">
     </div>
 </form>
-<table class="table table-striped">
-        <thead>
+<div class="table_wrapper flex flex-horizontal-center">
+<table>
+        <thead >
         <tr>
             <th>ID статьи</th>
             <th>Название статьи</th>
             <th>Дата создания</th>
             <th> Автор </th>
-
+            <th> Ссылка на статью  </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody >
          {% for article in filter.qs %}
         <tr>
             <td>
@@ -43,11 +44,12 @@
               {{ article.creator }}
             </td>
             <td>
-                <a href ="{% url 'article' article.article_id  %}" > Перейти </a>
+                <a  class="link_button" href ="{% url 'article' article.article_id  %}" > Перейти </a>
             </td>
         </tr>
         {% endfor %}
         </tbody>
 </table>
+</div>
 
 {% endblock %}

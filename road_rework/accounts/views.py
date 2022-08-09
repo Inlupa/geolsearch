@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from .forms import *
+from django.contrib import messages
 
 def user_login(request):
     if request.method == 'POST':
@@ -16,7 +17,8 @@ def user_login(request):
                 else:
                     return HttpResponse('Disabled account')
             else:
-                return HttpResponse('Неправильный пароль')
+                messages.info(request, 'Неправильный пароль')
+                return HttpResponseRedirect('/login')
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})

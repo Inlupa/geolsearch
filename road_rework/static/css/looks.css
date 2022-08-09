@@ -153,39 +153,38 @@ input {
 
 }
 /* Стиль таблицы надо будет переработать  */
-.table {
-	width: 99%;
-	border-radius:5px;
-	margin-bottom: 20px;
-	border: 5px solid #fff;
-	border-top: 5px solid #fff;
-	border-bottom: 3px solid #fff;
-	border-collapse: collapse;
-	outline: 3px solid #ffd300;
-	font-size: 15px;
-	background: #fff!important;
-}
-.table th {
-	font-weight: bold;
 
-	padding: 7px;
-	background: #ffd300;
-	border: none;
-	text-align: left;
-	font-size: 15px;
-	border-top: 3px solid #fff;
-	border-bottom: 3px solid #ffd300;
+
+table {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 14px;
+        text-align: center;
+        border-collapse: collapse;
+        border-radius: 10px;
+        box-shadow: 0 0 0 5px #F2906B;
+        color: #452F21;
+        width:50%;
 }
-.table td {
-	padding: 7px;
-	border-radius:20px;
-	border: none;
-	border-top: 3px solid #fff;
-	border-bottom: 3px solid #fff;
-	font-size: 15px;
+th {
+        padding: 10px 8px;
+        background: white;
 }
-.table tbody tr:nth-child(even){
-	background: #f8f8f8!important;
+table th:first-child {
+        border-top-left-radius: 10px;
+}
+table th:last-child {
+        border-top-right-radius: 10px;
+}
+td {
+        border-top: 5px solid #F2906B;
+        padding: 8px;
+        background: white;
+}
+        table td:first-child {
+        border-bottom-left-radius: 10px;
+}
+        table td:last-child {
+        border-bottom-right-radius: 10px;
 }
 
 /* Кнопки сохрания и отправки данных   */
@@ -198,10 +197,28 @@ input {
     color: #041624dc;
     font: 20px/1 sans-serif;
     transition: 0.15s;
-    max-width:95%;
+    max-width:50%;
 }
 
 .submit_button:hover {
+    background: #fbc02d;
+    color: white;
+    animation: fadeIn 5s;
+    transition: 0.15s;
+}
+
+.link_button {
+    text-decoration: none;
+    border-radius:20px;
+    padding:5px 10px;
+
+    color: #041624dc;
+    font: 15px/1 sans-serif;
+    transition: 0.15s;
+    max-width:95%;
+}
+
+.link_button:hover {
     background: #fbc02d;
     color: white;
     animation: fadeIn 5s;

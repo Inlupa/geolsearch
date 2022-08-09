@@ -27,16 +27,17 @@
         <li class="navitem flex flex-center"><a href="#"> Вакансии </a></li>
         <li class="navitem flex flex-center"><a href="#"> Как добраться </a></li>
         <li class="navitem flex flex-center"><a href="#"> Контакты </a></li>
-        <li class="navitem flex flex-center"><a href="/search_article"> Статьи </a></li>
-
         {% if request.user.is_authenticated %}
             <li class="navitem flex flex-center"><a href="{% url 'logout' %}"> Выйти </a></li>
+             <li class="navitem flex flex-center"><a href="{% url 'register' %}"> Создать пользователя </a></li>
         {% else %}
             <li class="navitem flex flex-center"><a href="{% url 'login' %}"> Войти </a></li>
-            <li class="navitem flex flex-center"><a href="{% url 'register' %}"> Регистрация </a></li>
         {% endif %}
         {% if request.user.is_authenticated %}
-            <li class="navitem flex flex-center"><a href="/article"> Создать статью </a></li>
+            <li class="navitem flex flex-center"><a href="{% url 'search_article' %}"> Редактировать статьи  </a></li>
+            <li class="navitem flex flex-center"><a href="#">  Создать статью  </a></li>
+        {% else %}
+            <li class="navitem flex flex-center"><a href="{% url 'article_search_display' %}"> Статьи </a></li>
         {% endif %}
     </ul>
 </nav>

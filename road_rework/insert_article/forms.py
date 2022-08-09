@@ -5,7 +5,7 @@ from django.utils.timezone import now
 class InsertAtricleForm(forms.ModelForm):
     class Meta:
         model = Article
-        fields = ['article_id', 'date', 'article_name', 'content']
+        fields = ['article_id', 'date', 'article_name', 'content', 'picture_url']
         widgets = {
             'article_id': forms.TextInput(attrs={'class': 'form-control input_form'}),
             'date': forms.DateInput(attrs={'class': 'form-control  input_form', 'type': 'date'}),
