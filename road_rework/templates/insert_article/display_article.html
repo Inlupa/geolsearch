@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Вход {% endblock %}
+{% block content %}
+
+ <div class=" flex flex-horizontal-center" >
+                <h1> Статья номер: {{article_id}} </h1>
+ </div>
+
+<div class=" flex flex-horizontal-center" >
+                <h1> Содержимое: {{content}} </h1>
+ </div>
+
+<div class=" flex flex-horizontal-center" >
+                <h1> Ссылка на картинку из базы: {{picture_url}} </h1>
+ </div>
+
+{% endblock %}
