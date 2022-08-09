@@ -7,11 +7,6 @@
 
         <div class="container_form">
 
-
-            <div>
-                {{form_article.article_id}}
-            </div>
-
             <div>
                 {{form_article.date}}
             </div>
@@ -26,8 +21,7 @@
             </div>
         </div>
 
-            <input type="submit" value="Сохранить">
-
+            <input class="submit_button" type="submit" value="Сохранить">
 
         {% csrf_token %}
 

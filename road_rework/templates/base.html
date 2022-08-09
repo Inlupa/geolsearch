@@ -33,6 +33,7 @@
             <li class="navitem flex flex-center"><a href="{% url 'logout' %}"> Выйти </a></li>
         {% else %}
             <li class="navitem flex flex-center"><a href="{% url 'login' %}"> Войти </a></li>
+            <li class="navitem flex flex-center"><a href="{% url 'register' %}"> Регистрация </a></li>
         {% endif %}
         {% if request.user.is_authenticated %}
             <li class="navitem flex flex-center"><a href="/article"> Создать статью </a></li>

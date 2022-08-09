@@ -13,7 +13,7 @@ def article_search(request):
 
 
 
-
+# добавить удаление, это толлько для админа где он будет редачить статьи
 def article_CRUD(request, article_id):
         instance = Article.objects.get(article_id=article_id)
         form_article = InsertAtricleForm(data=request.POST, instance=instance)
@@ -23,19 +23,22 @@ def article_CRUD(request, article_id):
                 else:
                     form_article = InsertAtricleForm(instance=instance)
         return render(request, "insert_article/article.html",
-                    context={'form_article': form_article})
+                    context={'form_article': form_article, 'article_id': article_id})
 
+# это тут для того чтобы чисто создавать статью и редактировать
+# надо передалать чтобы это было потом для пользователя который может редактировать
+# пока что не используется
 
 def article_create(request):
         form_article = InsertAtricleForm()
         if request.method == "POST":
                 form_article = InsertAtricleForm(request.POST)
-                id = form_article['article_id'].value()
-                if not Article.objects.filter(article_id=id).exists():
+                article_id = form_article['article_id'].value()
+                if not Article.objects.filter(article_id=article_id).exists():
                     if form_article.is_valid():
                         form_article.save()
                 else:
-                    modelArticle = Article.objects.get(article_id=id)
+                    modelArticle = Article.objects.get(article_id=article_id)
                     form_article = InsertAtricleForm(data=request.POST, instance=modelArticle)
                     if form_article.is_valid():
                         form_article.save()

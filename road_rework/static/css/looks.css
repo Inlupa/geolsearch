@@ -104,13 +104,13 @@ ul {
 
 }
 
-
 .button_type a:hover {
   background: #fbc02d;
   color: white;
   animation: fadeIn 5s;
   transition: 0.15s;
 }
+
 /* Тип текста на сайте под навбарами */
 .text-on-site {
     padding: 20px;
@@ -120,6 +120,7 @@ ul {
     text-align:justify;
 }
 
+
 label {
     font: 15px/1 sans-serif;
     text-decoration: none;
@@ -127,6 +128,7 @@ label {
     padding:5px;
 
 }
+/* инпут поля(по хорошему переделать ) */
 input {
   width: 100%;
   padding: 10px;
@@ -136,33 +138,24 @@ input {
 
 }
 
-.login_input_button{
-    position: relative;
-    top: 35px;
-    width: 80px;
-    height:45px;
-
-}
-
-
+   /* класс из формы в питоне  */
 .input_form {
   border-radius: 10px;
   max-width:95%;
-
 }
 
 .input_form_content {
   border-radius: 5px;
-
   width:98%;
   height:150px;
   font: 15px/1 sans-serif;
   text-decoration: none;
 
 }
-
+/* Стиль таблицы надо будет переработать  */
 .table {
-	width: 100%;
+	width: 99%;
+	border-radius:5px;
 	margin-bottom: 20px;
 	border: 5px solid #fff;
 	border-top: 5px solid #fff;
@@ -174,6 +167,7 @@ input {
 }
 .table th {
 	font-weight: bold;
+
 	padding: 7px;
 	background: #ffd300;
 	border: none;
@@ -184,6 +178,7 @@ input {
 }
 .table td {
 	padding: 7px;
+	border-radius:20px;
 	border: none;
 	border-top: 3px solid #fff;
 	border-bottom: 3px solid #fff;
@@ -191,4 +186,24 @@ input {
 }
 .table tbody tr:nth-child(even){
 	background: #f8f8f8!important;
+}
+
+/* Кнопки сохрания и отправки данных   */
+
+.submit_button {
+    text-decoration: none;
+    border-radius:20px;
+    padding:15px 70px;
+    background-color:#fc9700dc;
+    color: #041624dc;
+    font: 20px/1 sans-serif;
+    transition: 0.15s;
+    max-width:95%;
+}
+
+.submit_button:hover {
+    background: #fbc02d;
+    color: white;
+    animation: fadeIn 5s;
+    transition: 0.15s;
 }

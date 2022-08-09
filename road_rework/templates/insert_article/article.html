@@ -7,9 +7,8 @@
 
         <div class="container_form">
 
-
-            <div>
-                {{form_article.article_id}}
+            <div class=" flex flex-horizontal-center" >
+                <h2> Номер статьи в таблице: №{{article_id}} </h2>
             </div>
 
             <div>
@@ -26,8 +25,7 @@
             </div>
         </div>
 
-            <input type="submit" value="Сохранить">
-
+            <input class="submit_button" type="submit" value="Сохранить">
 
         {% csrf_token %}
 

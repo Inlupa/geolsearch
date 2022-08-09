@@ -3,14 +3,33 @@
 {% block title %}Create an account {% endblock %}
 
 {% block content %}
-<div style=" width: 100%;
-    height: 100%;">
-    <h1> Создание аккаунта </h1>
-    <p> Пожалуйста зарегистрируйте аккаунт :</p>
+<div class="flex flex-horizontal-center">
+    <h1> Пожалуйста зарегистрируйте аккаунт :</h1>
 </div>
-    <form class="flex" style="align-items: center;" action="." method="post">
-        {{ user_form.as_table}}
-        {% csrf_token %}
-        <p><input type="submit" value="Create my account"></p>
-    </form>
+<form  action="." method="post">
+
+    <div class="container_form">
+        <div>
+            {{ user_form.username}}
+        </div>
+        <div>
+            {{ user_form.first_name}}
+        </div>
+
+        <div>
+            {{ user_form.password}}
+        </div>
+        <div>
+            {{ user_form.password2}}
+        </div>
+        <div>
+            {{ user_form.email}}
+        </div>
+    </div>
+
+    <div class="flex flex-horizontal-center">
+         <input class="submit_button" type="submit" value="Создать аккаунт">
+    </div>
+    {% csrf_token %}
+</form>
 {% endblock %}
