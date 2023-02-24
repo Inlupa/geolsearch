@@ -10,9 +10,6 @@ def article_search(request):
     article_filter = ArticleFilter(request.GET, queryset=article_list)
     return render(request, "insert_article/search_article.html", {'filter': article_filter})
 
-
-
-
 # добавить удаление, это толлько для админа где он будет редачить статьи
 def article_CRUD(request, article_id):
         instance = Article.objects.get(article_id=article_id)

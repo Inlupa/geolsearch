@@ -10,85 +10,30 @@
     <link rel='stylesheet' href="{% static 'css/looks.css' %}">
     <link rel='stylesheet' href="{% static 'css/flex.css' %}">
     <link rel='stylesheet' href="{% static 'css/classes.css' %}">
-    <link rel='stylesheet' href="{% static 'css/media.css' %}">
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
-<body class="no_space">
+<body class="wrapper_all">
 
-<nav class="navbar flex no_space">
-    <ul class="flex-container flex flex-horizontal-center no_space">
-        <li class="navitem flex flex-center"><a href="/"> <img src="{% static 'img/icon_road.jpg' %}" width="80" height="40" alt="Картинка"/> </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Оборудование </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Материалы </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Инструменты </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Обслуживание </a>
-        <li class="navitem flex flex-center"><a href="#"> Документация </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Вакансии </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Как добраться </a></li>
-        <li class="navitem flex flex-center"><a href="#"> Контакты </a></li>
+<nav class="navbar">
+        <!--<a class="navitem  manrope"> <img src="" width="80" height="40"
+                                                          alt="Картинка"/></a>-->
+        <a class="manrope neonText" href="#"> О проекте  </a>
+        <a class="manrope neonText" href="#"> Контакты </a>
         {% if request.user.is_authenticated %}
-            <li class="navitem flex flex-center"><a href="{% url 'logout' %}"> Выйти </a></li>
-             <li class="navitem flex flex-center"><a href="{% url 'register' %}"> Создать пользователя </a></li>
+        <a class="manrope neonText" href="{% url 'logout' %}"> Выйти </a>
         {% else %}
-            <li class="navitem flex flex-center"><a href="{% url 'login' %}"> Войти </a></li>
+        <a class="manrope neonText"  href="{% url 'register' %}"> Создать пользователя </a>
+        <a class="manrope neonText" href="{% url 'login' %}"> Войти </a>
         {% endif %}
         {% if request.user.is_authenticated %}
-            <li class="navitem flex flex-center"><a href="{% url 'search_article' %}"> Редактировать статьи  </a></li>
-            <li class="navitem flex flex-center"><a href="#">  Создать статью  </a></li>
-        {% else %}
-            <li class="navitem flex flex-center"><a href="{% url 'article_search_display' %}"> Статьи </a></li>
+        <a class="manrope neonText" href="{% url 'article_search_display' %}"> Поиск </a>
         {% endif %}
-    </ul>
 </nav>
-
-<div class="wrapper">
-    <div class="image-slider swiper-container">
-        <div class="image-slider__wrapper swiper-wrapper">
-            <div class="image-slider__slide swiper-slide">
-                <div class="image-slider__image">
-                    <!-- Первая каротинка свайпера-->
-                    <picture class="button_type">
-                        <source srcset="{% static 'img/pic1.jpg' %}" media="(min-width:1200px)"/>
-                        <img src="{% static 'img/pic1_small.jpg' %}" alt="Картинка"/>
-                        <a class="text-on-pic" href="/repair"> Ремонт </a>
-                    </picture>
-
-                </div>
-            </div>
-
-            <div class="image-slider__slide swiper-slide">
-                <div class="image-slider__image">
-                    <!-- Вторая картинка свайпера-->
-                    <picture class="button_type">
-                        <source srcset="{% static 'img/pic2.jpg' %}" media="(min-width:1200px)"/>
-                        <img src="{% static 'img/pic2_small.jpg' %}" alt="Картинка"/>
-                        <a class="text-on-pic" href="/looks"> Внешний вид </a>
-                    </picture>
-                </div>
-            </div>
-
-            <div class="image-slider__slide swiper-slide">
-                <div class="image-slider__image">
-                    <!-- Третья картинка свайпера-->
-                    <picture class="button_type">
-                        <source srcset="{% static 'img/pic3.jpg' %}" media="(min-width:1200px)"/>
-                        <img src="{% static 'img/pic3_small.jpg' %}" alt="Картинка"/>
-                        <a class="text-on-pic" href="/tech"> Технологии строительства дорог</a>
-                    </picture>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="swiper-pagination"></div> -->
-
-
-    </div>
-</div>
 
 <script src="{% static 'js/main.js' %}"></script>
 
-<div > {% block content %}{% endblock %}</div>
+<div class="inside"> {% block content %}{% endblock %}</div>
 </body>
 </html>
 

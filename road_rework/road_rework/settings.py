@@ -59,6 +59,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'road_rework.wsgi.application'
 
 
+context_processors = [
+    'django.template.context_processors.media',
+]
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -113,6 +116,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login/'
 LOGOUT_REDIRECT_URL = '/'

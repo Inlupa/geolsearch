@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} Вход {% endblock %}
+{% block title %} Статьи {% endblock %}
 {% block content %}
 
  <div class=" flex flex-horizontal-center" >
@@ -7,11 +7,13 @@
  </div>
 
 <div class=" flex flex-horizontal-center" >
-                <h1> Содержимое: {{content}} </h1>
+                <h1> {{content}} </h1>
  </div>
 
 <div class=" flex flex-horizontal-center" >
-                <h1> Ссылка на картинку из базы: {{picture_url}} </h1>
+
+    <img src="{{picture_url}}" alt="Картинка" width="500px"/>
+
  </div>
 
 {% endblock %}

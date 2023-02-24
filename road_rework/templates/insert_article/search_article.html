@@ -1,55 +1,53 @@
 {% extends 'base.html' %}
 
-{% block title %} Регистрация документов {% endblock %}
+{% block title %} Поиск данных {% endblock %}
 {% block content %}
 
-<form  method="get" style="padding:20px">
-    <div class="container_form">
-        <div>
-         {{ filter.form.article_name}}
-        </div>
-        <div>
-            {{ filter.form.creator}}
-        </div>
+<form method="get" class="container_form flex">
+    <div>
+        {{ filter.form.article_name}}
     </div>
-
-    <div class="flex flex-horizontal-center">
-     <input class="submit_button" type="submit" value="Поиск">
+    <div>
+        {{ filter.form.creator}}
+    </div>
+    <div>
+        <input class="submit_button" type="submit" value="Поиск">
     </div>
 </form>
-<div class="table_wrapper flex flex-horizontal-center">
-<table>
-        <thead >
+
+<div class="table_wrapper">
+    <table>
+        <thead>
         <tr>
             <th>ID статьи</th>
             <th>Название статьи</th>
             <th>Дата создания</th>
-            <th> Автор </th>
-            <th> Ссылка на статью  </th>
+            <th> Автор</th>
+            <th> Ссылка на статью</th>
         </tr>
         </thead>
-        <tbody >
-         {% for article in filter.qs %}
+        <tbody>
+        {% for article in filter.qs %}
         <tr>
             <td>
-              {{ article.article_id }}
+                {{ article.article_id }}
             </td>
             <td>
-              {{ article.article_name }}
+                {{ article.article_name }}
             </td>
             <td>
-              {{ article.date }}
+                {{ article.date }}
             </td>
             <td>
-              {{ article.creator }}
+                {{ article.creator }}
             </td>
             <td>
-                <a  class="link_button" href ="{% url 'article' article.article_id  %}" > Перейти </a>
+                <a class="link_button" href="{% url 'article' article.article_id  %}"> Перейти </a>
             </td>
         </tr>
         {% endfor %}
         </tbody>
-</table>
+    </table>
 </div>
 
 {% endblock %}
