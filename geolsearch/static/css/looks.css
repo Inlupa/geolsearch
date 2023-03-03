@@ -1,28 +1,25 @@
 /* Настойки тега хтмл */
 html {
-        background: #e5e3ff;
-        display: flex;
-        width:100%;
-        align-items: center;
-        justify-content: center;
+       background: linear-gradient(to right, #6EB4D1 30%, #6CDEED 30%);
+}
+body{
+    margin:0;
 }
 /* Ширина скроллбара */
 ::-webkit-scrollbar {
     width: 10px;
      transition: 0.15s;
-
 }
 
 /* Вид скроллбара*/
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #fbc02d;
+  background: #120694;
 }
 /* Задний фон скролбара*/
 ::-webkit-scrollbar-track{
     background: #000000dc;
 }
-
 
 @font-face {
    font-family: 'Manrope';
@@ -31,31 +28,44 @@ html {
    font-style: normal;
 }
 
-
 .manrope{
     font-family: 'Manrope';
     font-style: normal;
-    text-decoration:none
+    text-decoration:none;
 }
 /* РНастройки списка */
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+ul{
+    margin:0;
+    list-style: square;
+}
+
+li{
+    font-size:20px;
+}
+
+p{
+    margin:0;
+    font-size:25px;
+    max-width:70%px;
+}
+
+h3{
+    margin:0;
+}
+
+h4{
+    margin:0;
 }
 
 .navbar {
     display:flex;
-    flex-direction:row;
     justify-content: center;
     align-items:center;
     text-align: center;
     flex-wrap: wrap;
     gap:20px;
     border-radius:5px;
-    list-style: none;
-    margin: 0;
-    background: #120694;
+    background: #005B83;
 }
 
 /* Настройка ссылок-кнопок внутри навбара*/
@@ -74,22 +84,9 @@ ul {
 
 /* Change the link color on hover */
 .navbar a:hover {
-  background: #b519a5;
+  background: #372cab;
   color: white;
   transition: 0.15s;
-}
-
-.neonText {
-  color: #fff;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
 }
 
 label {
@@ -97,7 +94,6 @@ label {
     text-decoration: none;
     color: #041624dc;
     padding:5px;
-
 }
 /* инпут поля(по хорошему переделать ) */
 input {
@@ -196,8 +192,39 @@ td {
     border-radius:30px;
     padding:20px;
     font: 30px/1 sans-serif;
+}
 
-    .input_form_content {
+.input_form_content {
     border-radius: 10px;
     max-width:80%;
+}
+
+.wrapper_about{
+    display:flex;
+    width:55%;
+
+    flex-direction:column;
+    gap:56px;
+    margin: 56px;
+}
+
+.container_about{
+    display:flex;
+    background:#BBF3FF;
+    padding:40px;
+    gap:10px;
+    border-radius:30px;
+    flex-direction:column;
+}
+
+
+.about_name{
+    display:flex;
+    font-size:30px;
+
+}
+
+.about_text{
+    display:flex;
+
 }

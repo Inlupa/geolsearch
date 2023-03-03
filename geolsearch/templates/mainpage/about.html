@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} Вход {% endblock %}
+{% block content %}
+{% load static %}
+<div class="wrapper_about">
+        <div class="container_about">
+            <div class="manrope about_name"> Идея</div>
+            <div class="manrope about_text"> Поисковая система, которая позволяет структурировать геолого-геофизическую информацию. </div>
+        </div>
+
+        <div class="container_about">
+                <div class="manrope about_name"> Возможности </div>
+                <ul>
+                    <li class="manrope"> загружать геологические файловые данные; </li>
+                    <li class="manrope"> быстро искать нужную информацию; </li>
+                    <li class="manrope"> анализировать данные на наличие определенной информации. </li>
+                </ul>
+        </div>
+
+        <div class="container_about">
+                <div class="manrope about_name"> Как пользоваться?</div>
+                <div class="manrope about_text"> Зарегистрироваться во вкладке "Регистрация" с использованием e-mail. </div>
+        </div>
+
+
+        <div class="container_about">
+                <div class="manrope about_name"> Как устроен инструмент? </div>
+                <ul>
+                    <li class="manrope"> файловые данные пользователь загружает в систему; </li>
+                    <li class="manrope"> система анализирует информацию и создает базу данных; </li>
+                    <li class="manrope"> пользователь получает информацию о категориях геологической информации, которая присутствует в данных; </li>
+                    <li class="manrope"> по тегам и словам пользователь может искать нужную информацию. </li>
+                </ul>
+        </div>
+</div>
+{% endblock %}

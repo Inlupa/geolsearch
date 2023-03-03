@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Авторизация {% endblock %}
+{% block content %}
+    <h2 class="manrope"> Введите логин и пароль для входа </h2>
+
+
+    <form class="container_form" action="." method="post">
+
+        {{form.username}}
+        {{form.password}}
+        <input  class="submit_button" type="submit" value="Войти">
+
+        {% csrf_token %}
+    </form>
+{% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }} </li>
+            {% endfor %}
+        </ul>
+{% endif %}
+{% endblock %}
