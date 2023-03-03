@@ -36,7 +36,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'road_rework.urls'
+ROOT_URLCONF = 'geolsearch.urls'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 TEMPLATES = [
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'road_rework.wsgi.application'
+WSGI_APPLICATION = 'geolsearch.wsgi.application'
 
 
 context_processors = [

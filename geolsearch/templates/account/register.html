@@ -4,10 +4,9 @@
 
 {% block content %}
 
-<h1 class="manrope"> Пожалуйста зарегистрируйте аккаунт :</h1>
-
-<form class="container_form" action="." method="post">
-
+<div class="login_wrapper">
+    <form class="container_login" action="." method="post">
+    <h1 class="manrope"> Пожалуйста зарегистрируйте аккаунт:</h1>
             {{ user_form.username}}
 
             {{ user_form.first_name}}
@@ -17,7 +16,14 @@
             {{ user_form.password2}}
 
             {{ user_form.email}}
-         <input class="submit_button flex" type="submit" value="Создать аккаунт"> </div>
+         <input class="submit_button flex" type="submit" value="Создать аккаунт">
     {% csrf_token %}
-</form>
+    </form>
+</div>
+
+<style>
+html{
+  background: #BBF3FF;
+}
+</style>
 {% endblock %}

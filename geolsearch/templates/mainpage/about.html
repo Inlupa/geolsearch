@@ -1,8 +1,15 @@
 {% extends "base.html" %}
-{% block title %} Вход {% endblock %}
+{% block title %} О проекте {% endblock %}
 {% block content %}
 {% load static %}
 <div class="wrapper_about">
+
+        <div class="right">
+            <h1 class="manrope" style="display:flex;position:relative;left:42px;">  Быстрый поиск и <br> структурирование <br> геологических данных </h1>
+            <img style="max-width:500px; display:flex;" src="{% static 'img/with_idea.png' %}" alt="Идея"/>
+
+        </div>
+<div class="left">
         <div class="container_about">
             <div class="manrope about_name"> Идея</div>
             <div class="manrope about_text"> Поисковая система, которая позволяет структурировать геолого-геофизическую информацию. </div>
@@ -32,5 +39,7 @@
                     <li class="manrope"> по тегам и словам пользователь может искать нужную информацию. </li>
                 </ul>
         </div>
+    </div>
+
 </div>
 {% endblock %}

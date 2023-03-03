@@ -1,14 +1,43 @@
 {% extends "base.html" %}
-{% block title %} Вход {% endblock %}
+{% block title %} Инструкция по использованию {% endblock %}
 {% block content %}
 
-<div class="container_form manrope">
+    <div class="wrapper_how">
+        <h1 class="manrope header_left"> 1. Регистрация на сайте </h1>
+        <div class="container_how">
+            <div class="manrope container_how_left w_70"> Для использования поисковой системы требуется регистрация </div>
+            <div class="manrope container_how_right f_30 w_30 center_items"> Регистрация/вход </div>
+        </div>
 
-    <h1 class="manrope flex flex-horizontal-center" style="margin:0"> О месте проведения конференции </h1>
+        <h1 class="manrope header_right"> 2. Вход в систему </h1>
+        <div class="container_how">
+            <div class="manrope container_how_left w_30 f_30 center_items" > Поиск и загрузка данных </div>
+            <div class="manrope container_how_right w_70 f_20"> После регистрации и входа в систему на верхней панели становятся доступными вкладки поиска и загрузки данных </div>
+        </div>
 
-    <p> Пasfaksjfb.asm,bdfn </p>
-    <p>  lakakak </p>
-    <p> kzkzkzk.</p>
 
-</div>
+        <h1 class="manrope header_left"> 3. Поиск по данным </h1>
+        <div class="container_how">
+            <div class="manrope container_how_left w_70"> На странице поиска есть возможность сформировать сводную информацию о наличии определенных категорий данных, а также искать отдельные слова и теги в файлах </div>
+            <div class="manrope container_how_right w_30 f_20">  </div>
+        </div>
+
+        <h1 class="manrope header_right"> 4. Загрузка файловых данных  </h1>
+        <div class="container_how">
+            <div class="manrope container_how_left w_30">  </div>
+            <div class="manrope container_how_right w_70 f_20"> В дальнейшем планируется подключение модуля для поиска по собственным данным </div>
+        </div>
+
+        <h1 class="manrope header_left"> 5. Выгрузка результатов  </h1>
+        <div class="container_how">
+            <div class="manrope container_how_left w_70"> Результаты поискового запроса можно скачать в виде таблицы в форматах *.csv и *.xslx </div>
+            <div class="manrope container_how_right w_30 f_20">  </div>
+        </div>
+    </div>
+
+<style>
+    html{
+    background:#6CDEED;
+    }
+</style>
 {% endblock %}

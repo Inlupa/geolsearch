@@ -1,6 +1,7 @@
 /* Настойки тега хтмл */
 html {
        background: linear-gradient(to right, #6EB4D1 30%, #6CDEED 30%);
+
 }
 body{
     margin:0;
@@ -99,9 +100,12 @@ label {
 input {
   width: 100%;
   padding: 10px;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 400;
+  font-family: 'Manrope';
+  border: solid #83DFEB;
+  border-radius:30px;
+  border-width: thick;
+  font-size:20px;
+  background:#E1FAFF;
 }
 
    /* класс из формы в питоне  */
@@ -154,10 +158,11 @@ td {
     font-family: 'Manrope';
     font_size:20px;
     border-radius:20px;
-    background: #4c40c9;
+    background: #3EBFDB;
     color:  white;
+    width:190px;
     transition: 0.15s;
-    max-width:50%;
+
 
 }
 
@@ -201,11 +206,31 @@ td {
 
 .wrapper_about{
     display:flex;
-    width:55%;
 
+    flex-direction:row-reverse;
+    gap:20px;
+    margin: 56px;
+}
+
+
+.left{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
     flex-direction:column;
     gap:56px;
-    margin: 56px;
+    margin: 10px;
+    order:2;
+}
+
+.right{
+    display:flex;
+    gap:150px;
+    width:80%;
+    line-height:70px;
+    flex-direction:column;
+    order:1;
 }
 
 .container_about{
@@ -213,6 +238,8 @@ td {
     background:#BBF3FF;
     padding:40px;
     gap:10px;
+    width: 70%;
+    max-width:1000px;
     border-radius:30px;
     flex-direction:column;
 }
@@ -226,5 +253,74 @@ td {
 
 .about_text{
     display:flex;
+    font-size:20px
 
+}
+
+
+.login_wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    gap:56px;
+    margin: 56px;
+}
+
+.container_login{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    width:40%;
+
+    padding:40px;
+    border: solid #83DFEB;
+    border-radius:30px;
+    border-width: thick;
+
+    flex-direction:column;
+    gap:15px;
+
+    background:#A1EEFF;
+
+}
+
+.wrapper_how{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin: 56px;
+}
+
+
+.container_how{
+    display:flex;
+    gap:50px;
+    width: 70%;
+    border-radius:30px;
+    flex-direction:row;
+    margin:0 0 90px 0;
+}
+
+
+.container_how_left{
+    display:flex;
+    align-items:center;
+    background:#BBFFF3;
+    font-size:20px;
+    padding:40px;
+    gap:10px;
+
+    border-radius:30px;
+}
+
+.container_how_right{
+    display:flex;
+    align-items:center;
+    background:#C1E4EC;
+    padding:40px;
+    gap:10px;
+
+    border-radius:30px;
 }

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class LoginForm(forms.Form):
 
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-control input_form flex','placeholder':' Имя пользователя'}))
+    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-control input_form flex','placeholder':' Логин/e-mail'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control input_form flex','placeholder':' Пароль'}))
 
 class UserRegistrationForm(forms.ModelForm):
@@ -11,7 +11,7 @@ class UserRegistrationForm(forms.ModelForm):
     first_name = forms.CharField(label='Name', widget=forms.TextInput(attrs={'class': 'form-control input_form flex', 'placeholder': ' Ваше имя'}))
     email = forms.CharField(label='Name', widget=forms.TextInput(attrs={'class': 'form-control input_form flex', 'placeholder': 'E-mail'}))
     password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-control input_form flex', 'placeholder':' Пароль'}))
-    password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput(attrs={'class': 'form-control input_form flex', 'placeholder':' Введите повторный пароль'}))
+    password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput(attrs={'class': 'form-control input_form flex', 'placeholder':' Повторите пароль'}))
 
     class Meta:
         model = User

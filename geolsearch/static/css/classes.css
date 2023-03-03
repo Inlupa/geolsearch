@@ -1,0 +1,30 @@
+.w_70 {
+    width:70%;
+}
+
+.w_30 {
+    width:30%;
+}
+
+.f_30{
+    font-size:30px;
+}
+
+.f_20{
+    font-size:20px;
+}
+
+.center_items{
+    justify-content:center;
+    text-align:center;
+}
+.header_left{
+    display:flex;
+
+}
+
+.header_right{
+    display:flex;
+
+
+}
