@@ -1,24 +1,8 @@
 from django import forms
-from .models import *
-from django.utils.timezone import now
 
-class InsertAtricleForm(forms.ModelForm):
-    class Meta:
-        model = Article
-        fields = ['article_id', 'date', 'article_name', 'content', 'picture_url']
-        widgets = {
-            'article_id': forms.TextInput(attrs={'class': 'form-control input_form'}),
-            'date': forms.DateInput(attrs={'class': 'form-control  input_form', 'type': 'date'}),
-            'article_name': forms.TextInput(attrs={'class': 'form-control  input_form' , 'placeholder':'Название статьи'}),
-            'content': forms.Textarea(attrs={'class': 'form-control  input_form_content' , 'type': 'text', 'placeholder':'текст'}),
-        }
-        labels = {
-            'article_id': 'ID статьи',
-            'date': 'Дата',
-            'article_name': 'Название статьи:',
-            'content': 'Текст статьи',
-        }
+class UserSearch(forms.Form):
+    text = forms.CharField(max_length=100)
+    tag = forms.CharField(max_length=100)
+    table = forms.CharField(max_length=100)
 
-    def __init__(self, *args, **kwargs):
-        super(InsertAtricleForm, self).__init__(*args, **kwargs)
-        self.fields['date'].initial = now
+

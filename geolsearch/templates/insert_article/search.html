@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %} Поиск {% endblock %}
+{% block content %}
+<div class="login_wrapper">
+        <form action="" class="container_login" method="POST">
+        {% csrf_token %}
+
+                <div class="manrope">
+                 <h2>  Поиск по тексту: </h2>
+                {{ form.text}}
+                </div>
+
+                <div class="manrope">
+                 <h2 > Поиск по тегу: </h2>
+                {{ form.tag}}
+                </div>
+                <div class="manrope">
+                 <h2> Поиск по тaблице: </h2>
+                {{ form.table}}
+                </div>
+
+        <input style="width:20%; background:#9c94f2; color:white; " type="Submit" name="submit" value="Поиск"/>
+        </form>
+
+
+{% if submitbutton == "Поиск" %}
+
+        <a class="download_button manrope" href="/download">
+                <div >
+                        <h1> Скачать файл с таблицей </h1>
+                </div>
+        </a>
+
+        <div style="display:flex; background:white;border-radius:30px;padding:30px; width:80%; flex-direction:row; text-align:center;" >
+                <h3  style="width:30%;" class="manrope"> Путь </h3>
+                <h3  style="width:10%" class="manrope"> Имя документа  </h3>
+                <h3  style="width:10%;" class="manrope"> Тип документа </h3>
+                <h3  style="width:40%;" class="manrope"> Описание </h3>
+                <h3  style="width:10%;" class="manrope"> Тип поиска </h3>
+        </div>
+
+
+        <div style="background:white;border-radius:30px;padding:30px; width:80%;">
+
+                <div class="table_container">
+                        {% for index, row in df.iterrows %}
+                        <div class="flex-table manrope">
+                                {% for cell in row %}
+                                <div class="flex-row">
+                                        {{cell}}
+                                </div>
+                                {% endfor %}
+                        </div>
+                        {% endfor %}
+                </div>
+
+        </div>
+</div>
+
+ {% endif %}
+<style>
+html{
+  background: #BBF3FF;
+}
+</style>
+
+{% endblock %}

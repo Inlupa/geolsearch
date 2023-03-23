@@ -1,59 +1,54 @@
 from django.shortcuts import render
 from .forms import *
-from django.http import JsonResponse
-from .models import Article
-from .filters import *
+import pandas as pd
+import mimetypes
+# import os module
+import os
+# Import HttpResponse module
+from django.http.response import HttpResponse
 
 
-def article_search(request):
-    article_list = Article.objects.all()
-    article_filter = ArticleFilter(request.GET, queryset=article_list)
-    return render(request, "insert_article/search_article.html", {'filter': article_filter})
-
-# добавить удаление, это толлько для админа где он будет редачить статьи
-def article_CRUD(request, article_id):
-        instance = Article.objects.get(article_id=article_id)
-        form_article = InsertAtricleForm(data=request.POST, instance=instance)
-        if request.method == 'POST':
-                if form_article.is_valid():
-                    form_article.save()
-                else:
-                    form_article = InsertAtricleForm(instance=instance)
-        return render(request, "insert_article/article.html",
-                    context={'form_article': form_article, 'article_id': article_id})
-
-# это тут для того чтобы чисто создавать статью и редактировать
-# надо передалать чтобы это было потом для пользователя который может редактировать
-# пока что не используется
-
-# def article_create(request):
-#         form_article = InsertAtricleForm()
-#         if request.method == "POST":
-#                 form_article = InsertAtricleForm(request.POST)
-#                 article_id = form_article['article_id'].value()
-#                 if not Article.objects.filter(article_id=article_id).exists():
-#                     if form_article.is_valid():
-#                         form_article.save()
-#                 else:
-#                     modelArticle = Article.objects.get(article_id=article_id)
-#                     form_article = InsertAtricleForm(data=request.POST, instance=modelArticle)
-#                     if form_article.is_valid():
-#                         form_article.save()
-#         return render(request, "insert_article/article_create.html",
-#                               context={'form_article': form_article})
 
 
-# тут вьюшка для отображаениия новости/статьи
+def Search(request):
+    form = UserSearch(request.POST or None)
 
-def article_search_display(request):
-    article_list = Article.objects.all()
-    article_filter = ArticleFilter(request.GET, queryset=article_list)
-    return render(request, "insert_article/article_search_display.html", {'filter': article_filter})
+    submitbutton = request.POST.get("submit")
 
-def display_article(request, article_id):
-    instance = Article.objects.get(article_id=article_id)
-    content = instance.content
-    picture_url = instance.picture_url
-    return render(request, "insert_article/display_article.html",
-                  context={ 'article_id': article_id, 'content': content, 'picture_url': picture_url})
+    text =''
+    tag=''
+    table=''
+    df=''
+    if form.is_valid():
+            text = form.cleaned_data.get("text")
+            tag = form.cleaned_data.get("tag")
+            table = form.cleaned_data.get("table")
 
+            # тут функция для создания дата фрейма из solr
+            df = pd.read_excel('C:\\Users\\Anton\\Desktop\\python\\geochemistry.xlsx')  # use pandas to read the csv
+            # тут надо сохранить в нужном формате этот дата фрейм в файл в директорию /static/docs/
+
+            form = UserSearch()
+    return render(request, "insert_article/search.html",
+                  context={'form': form, 'df':df, 'submitbutton':submitbutton})
+
+
+def download_file(requests):
+    # Define Django project base directory
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Define text file name
+    filename = 'text.txt'
+    # Define the full file path
+    filepath = BASE_DIR + '/static/doc/' + filename
+    # Open the file for reading content
+    path = open(filepath, 'br')
+    # Set the mime type
+    mime_type, _ = mimetypes.guess_type(filepath)
+    # Set the return value of the HttpResponse
+    response = HttpResponse(path, content_type=mime_type)
+    # Set the HTTP header for sending to browser
+    response['Content-Disposition'] = "attachment; filename=%s" % filename
+    # Return the response value
+
+    #документы
+    return response
