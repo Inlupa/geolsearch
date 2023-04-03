@@ -1,67 +1,174 @@
 {% extends 'base.html' %}
 {% block title %} Поиск {% endblock %}
 {% block content %}
-<div class="login_wrapper">
-        <form action="" class="container_login" method="POST">
-        {% csrf_token %}
+<div class="container_login">
+                    <form action="" style="display:flex;align-items:center;flex-direction:column;gap:10px;" method="POST">
+                        {% csrf_token %}
 
-                <div class="manrope">
-                 <h2>  Поиск по тексту: </h2>
-                {{ form.text}}
-                </div>
-
-                <div class="manrope">
-                 <h2 > Поиск по тегу: </h2>
-                {{ form.tag}}
-                </div>
-                <div class="manrope">
-                 <h2> Поиск по тaблице: </h2>
-                {{ form.table}}
-                </div>
-
-        <input style="width:20%; background:#9c94f2; color:white; " type="Submit" name="submit" value="Поиск"/>
-        </form>
-
-
-{% if submitbutton == "Поиск" %}
-
-        <a class="download_button manrope" href="/download">
-                <div >
-                        <h1> Скачать файл с таблицей </h1>
-                </div>
-        </a>
-
-        <div style="display:flex; background:white;border-radius:30px;padding:30px; width:80%; flex-direction:row; text-align:center;" >
-                <h3  style="width:30%;" class="manrope"> Путь </h3>
-                <h3  style="width:10%" class="manrope"> Имя документа  </h3>
-                <h3  style="width:10%;" class="manrope"> Тип документа </h3>
-                <h3  style="width:40%;" class="manrope"> Описание </h3>
-                <h3  style="width:10%;" class="manrope"> Тип поиска </h3>
-        </div>
-
-
-        <div style="background:white;border-radius:30px;padding:30px; width:80%;">
-
-                <div class="table_container">
-                        {% for index, row in df.iterrows %}
-                        <div class="flex-table manrope">
-                                {% for cell in row %}
-                                <div class="flex-row">
-                                        {{cell}}
-                                </div>
-                                {% endfor %}
+                        <div class="manrope">
+                            <h2> Поиск по тексту: </h2>
+                            {{ form.text}}
                         </div>
-                        {% endfor %}
-                </div>
 
-        </div>
+                        <div class="manrope">
+                            <h2> Поиск по тегу: </h2>
+                            {{ form.tag}}
+                        </div>
+                        <div class="manrope">
+                            <h2> Поиск по тaблице: </h2>
+                            {{ form.table}}
+                        </div>
+
+                        <input style="width:20%; background:#9c94f2; color:white; " type="Submit" name="submit"
+                               value="Поиск"/>
+                    </form>
 </div>
 
- {% endif %}
+    <div class="section__tabs tabs">
+        <div class="tabs__head">
+            <div class="tabs__caption manrope" data-tab="search1"> Полнотекстовый поиск</div>
+            <div class="tabs__caption manrope" data-tab="search2"> Фасетный поиск</div>
+            <div class="tabs__caption manrope" data-tab="search3"> Сводная информация </div>
+        </div>
+        <div class="tabs__body">
+
+
+            <div class="tabs__content" data-tab="search1">
+                <div class="tabs_container manrope">
+
+                    {% if submitbutton == "Поиск" %}
+
+                    <a class="download_button manrope" href="/download">
+                             Скачать файл с таблицей
+                    </a>
+
+                    <div style="display:flex; background:white;border-radius:30px;padding:30px; width:80%; flex-direction:row; text-align:center;">
+                        <h3 style="width:30%;" class="manrope"> Путь </h3>
+                        <h3 style="width:10%" class="manrope"> Имя документа </h3>
+                        <h3 style="width:60%;" class="manrope"> Описание </h3>
+
+                    </div>
+
+                    <div style="background:white;border-radius:30px;padding:30px;">
+
+                        <div class="table_container">
+                            {% for index, row in df.iterrows %}
+                            <div class="flex-table manrope">
+                                {% for cell in row %}
+                                <div class="flex-row">
+                                    {{cell}}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="tabs__content" data-tab="search2">
+                <div class="tabs_container manrope">
+
+                    {% if submitbutton == "Поиск" %}
+
+                    <a class="download_button manrope" href="/download_f">
+                             Скачать файл с таблицей
+                    </a>
+
+                    <div style="display:flex; background:white;border-radius:30px;padding:30px; width:80%; flex-direction:row; text-align:center;">
+                        <h3 style="width:80%;" class="manrope"> Значение </h3>
+
+
+                        <h3 style="width:20%;" class="manrope"> Количество </h3>
+
+                    </div>
+
+                    <div style="background:white;border-radius:30px;padding:30px;">
+
+                        <div class="table_container">
+                            {% for index, row in df2.iterrows %}
+                            <div class="flex-table manrope">
+                                {% for cell in row %}
+                                <div class="flex-row2">
+                                    {{cell}}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+            </div>
+
+            <div class="tabs__content" data-tab="search3">
+                <div class="tabs_container manrope">
+                    <h3 class="manrope"> Тут будут графики </h3>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
 <style>
 html{
-  background: #BBF3FF;
+     background: #BBF3FF;
 }
+
 </style>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => { // Структура страницы загружена и готова к взаимодействию
+
+  const tabs = () => { // объявляем основную функцию для вкладок, чтобы вся логика была в одном месте
+    const head = document.querySelector('.tabs__head') // ищем элемент с кнопками и записываем в константу
+    const body = document.querySelector('.tabs__body') // ищем элемент с контентом и записываем в константу
+
+    const getActiveTabName = () => { // объявляем функцию для получения названия активной вкладки
+      return head.querySelector('.tabs__caption_active').dataset.tab // возвращаем значение data-tab активной кнопки
+    }
+
+    const setActiveContent = () => { // объявляем функцию для установки активного элемента контента
+      if (body.querySelector('.tabs__content_active')) { // если уже есть активный элемент контента
+        body.querySelector('.tabs__content_active').classList.remove('tabs__content_active') // то скрываем его
+      }
+      body.querySelector(`[data-tab=${getActiveTabName()}]`).classList.add('tabs__content_active') // затем ищем элемент контента, у которого значение data-tab совпадает со значением data-tab активной кнопки и отображаем его
+    }
+
+    // проверяем при загрузке страницы, есть ли активная вкладка
+    if (!head.querySelector('.tabs__caption_active')) {  // если активной вкладки нет
+      head.querySelector('.tabs__caption').classList.add('tabs__caption_active') // то делаем активной по-умолчанию первую вкладку
+    }
+
+    setActiveContent(getActiveTabName()) // устанавливаем активный элемент контента в соответствии с активной кнопкой при загрузке страницы
+
+    head.addEventListener('click', e => { // при клике на .tabs__head
+      const caption = e.target.closest('.tabs__caption') // узнаем, был ли клик на кнопке
+      if (!caption) return // если клик был не на кнопке, то прерываем выполнение функции
+      if (caption.classList.contains('tabs__caption_active')) return // если клик был на активной кнопке, то тоже прерываем выполнение функции и ничего не делаем
+
+      if (head.querySelector('.tabs__caption_active')) { // если уже есть активная кнопка
+        head.querySelector('.tabs__caption_active').classList.remove('tabs__caption_active') // то удаляем ей активный класс
+      }
+
+      caption.classList.add('tabs__caption_active') // затем добавляем активный класс кнопке, на которой был клик
+
+      setActiveContent(getActiveTabName()) // устанавливаем активный элемент контента в соответствии с активной кнопкой
+    })
+  }
+
+  tabs() // вызываем основную функцию
+
+})
+</script>
 
 {% endblock %}
