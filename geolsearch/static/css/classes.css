@@ -78,7 +78,9 @@
   background: #00008B;
 }
 .tabs__body {
+
   display:flex;
+
   justify-content:center;
   align-items:center;
   background: var(--primary);
@@ -91,6 +93,7 @@
   display: none;
   color: var(--color);
   transform: scaleY(0.8);
+  min-width: 50%;
 
   opacity: 0;
   transform-origin: center top;

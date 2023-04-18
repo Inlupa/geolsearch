@@ -47,7 +47,7 @@ li{
 p{
     margin:0;
     font-size:25px;
-    max-width:70%px;
+    max-width:70px;
 }
 
 h3{
@@ -165,7 +165,7 @@ td {
 }
 
 .link_button {
-    font-family: 'Manrope'
+    font-family: 'Manrope';
     text-decoration: none;
     border-radius:20px;
     padding:5px 10px;
@@ -176,9 +176,9 @@ td {
 }
 
 .link_button:hover {
-    background: #b519a5
+    background: #b519a5;
     color: white;
-    font-family: 'Manrope'
+    font-family: 'Manrope';
     animation: fadeIn 5s;
     transition: 0.15s;
 }
@@ -382,7 +382,77 @@ td {
     transition:0.3s;
 }
 
+.accordion {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    /*gap: 32px;*/
+    width: 100%;
+
+
+    order: 0;
+    flex-grow: 1;
+}
+
+.accordion__item {
+    box-shadow: 0 0.05rem rgb(0 0 0 / 15%);
+}
+
+.accordion__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: #03213C;
+    font-weight: 600;
+
+    font-size: 30px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+}
+
+.accordion__header::before {
+    width: 1.3rem;
+    height: 1.2rem;
+
+    background: url('../img/accordion_arrow.png');
+    background-repeat: no-repeat;
+    background-size: 1.2rem;
+    content: '';
+    transition: transform 0.1s;
+}
+
+.accordion__item_show .accordion__header::before,
+.accordion__item_slidedown .accordion__header::before {
+    transform: rotate(-180deg);
+
+}
+
+.accordion__header:hover {
+    color:#00008B;
+    transition: transform 0.1s;
+}
+
+.accordion__item:not(.accordion__item_show) .accordion__header {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.accordion__content {
+
+    padding: 0.75rem 1rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.accordion__item:not(.accordion__item_show) .accordion__body {
+    display: none;
+}
 
 
 
