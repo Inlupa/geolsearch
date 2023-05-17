@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} Поиск {% endblock %}
 {% block content %}
+{% load static %}
 <div class="container_login">
     <form action="" style="display:flex;align-items:center;flex-direction:column;gap:10px;" method="POST">
         {% csrf_token %}
@@ -174,7 +175,21 @@
 
         <div class="tabs__content" data-tab="search3">
             <div class="tabs_container manrope">
-                <h3 class="manrope"> Тут будут графики </h3>
+
+            <div style="display: flex;flex-direction: row; gap: 20px;">
+
+                <h3 style="padding: 20px; background-color: white;border-radius: 20px;"> Соотношение расширений, более 500 файлов</h3>
+                <h3 style="padding: 20px; background-color: white;border-radius: 20px;"> Соотношение расширений, от 100 до 500 файлов</h3>
+                <h3 style="padding: 20px; background-color: white;border-radius: 20px;"> Соотношение расширений, менее 100 файлов </h3>
+            </div>
+
+            <div style="display: flex;flex-direction: row; gap: 50px;">
+                    <img style=" display:flex;" src="{% static 'img/exten_500.png' %}" alt="Идея"/>
+                    <img style=" display:flex;" src="{% static 'img/exten_100-500.png' %}" alt="Идея"/>
+                    <img style=" display:flex;" src="{% static 'img/exten_10-100.png' %}" alt="Идея"/>
+            </div>
+            <h3 style="padding: 20px; background-color: white;border-radius: 20px;"> Наличие и количество тегов</h3>
+             <img style="width:1000px; display:flex;" src="{% static 'img/hist_plot.png' %}" alt="Идея"/>
 
             </div>
         </div>
